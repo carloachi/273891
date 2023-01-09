@@ -41,7 +41,7 @@ We divided the customers into age categories, counted the number of people in ea
 Transactions
 The transactions dataset includes information about all purchases made by each customer and the dates on which they were made. We calculated the number of transactions per customer and found that the maximum number of transactions made by a single customer was 104. To gain a better understanding of the dataset, we grouped the transactions into classes and observed that only a small proportion of customers made more than 30 transactions. We also calculated the number of customers who purchased each product.
 
-![transactions_group](images/n_transaction_n_customers.png)
+![transactions_group](images/images/purchase.png)
 
 
 Articles
