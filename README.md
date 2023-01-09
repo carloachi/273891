@@ -96,7 +96,7 @@ This method works by decomposing the user-item interaction matrix into the produ
 Loss function
 We used a loss function to evaluate the performance of our model and attempted to minimize the error. To optimize the performance of our function, we used the mean squared error (MSE) and two regularization coefficients, L2 and the gravity term.
 
-![loss_function](https://user-images.githubusercontent.com/121171793/211380981-978b7981-9509-43d3-97c2-674e7422e0e9.png)
+![loss_function](images/loss_function.png)
 
 
 To evaluate the performance of our recommendations, we split our dataset into a train and test set and plotted the loss function. While the loss function was not perfect, the small value of the number of transactions on the y-axis made it difficult to predict. We experimented with various hyperparameters to try to improve the accuracy.
