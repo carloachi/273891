@@ -33,15 +33,15 @@ We have data for over 40,000 customers, including their IDs, subscription status
 
 We divided the customers into age categories, counted the number of people in each category, and calculated the proportion of people who are subscribed to the club membership or fashion news.
 
-![club_membership](https://user-images.githubusercontent.com/121171793/211379692-14cc276e-4302-44d9-96ce-2c5a659c9df0.png)
+![club_membership](images/n_transaction_n_customers.png)
 
-![fashion_news](https://user-images.githubusercontent.com/121171793/211379790-44476ae0-8f15-4944-9481-f0a4abc214bd.jpg)
+![fashion_news](images/age_group.png)
 Club Membership!
 
 Transactions
 The transactions dataset includes information about all purchases made by each customer and the dates on which they were made. We calculated the number of transactions per customer and found that the maximum number of transactions made by a single customer was 104. To gain a better understanding of the dataset, we grouped the transactions into classes and observed that only a small proportion of customers made more than 30 transactions. We also calculated the number of customers who purchased each product.
 
-![transactions_group](https://user-images.githubusercontent.com/121171793/211380018-49a187f6-9459-4f9f-9a57-c937690cd4bc.png)
+![transactions_group](images/n_transaction_n_customers.png)
 
 
 Articles
@@ -51,7 +51,7 @@ During our explanatory data analysis, we searched for the best identifier for al
 
 We also identified 'Unknown' items in the data and removed them because they made up a small proportion of the data.
 
-![articles](https://user-images.githubusercontent.com/121171793/211380723-29a2ed1d-99b8-4740-8fe2-d53ad7666712.png)
+![articles](images/section_of_product_n_of_transaction.png)
 
 
 4) Recommender System
