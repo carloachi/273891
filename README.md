@@ -33,14 +33,16 @@ We have data for over 40,000 customers, including their IDs, subscription status
 
 We divided the customers into age categories, counted the number of people in each category, and calculated the proportion of people who are subscribed to the club membership or fashion news.
 
-Club Membership!
+![club_membership](https://user-images.githubusercontent.com/121171793/211379692-14cc276e-4302-44d9-96ce-2c5a659c9df0.png)
 
-Fashion News!
+![fashion_news](https://user-images.githubusercontent.com/121171793/211379790-44476ae0-8f15-4944-9481-f0a4abc214bd.jpg)
+Club Membership!
 
 Transactions
 The transactions dataset includes information about all purchases made by each customer and the dates on which they were made. We calculated the number of transactions per customer and found that the maximum number of transactions made by a single customer was 104. To gain a better understanding of the dataset, we grouped the transactions into classes and observed that only a small proportion of customers made more than 30 transactions. We also calculated the number of customers who purchased each product.
 
-Transaction Groups!
+![transactions_group](https://user-images.githubusercontent.com/121171793/211380018-49a187f6-9459-4f9f-9a57-c937690cd4bc.png)
+
 
 Articles
 Our dataset includes 6536 articles, each with various characteristics. Each product belongs to multiple categories, including a garment group, section, department, index group, and type.
@@ -49,7 +51,8 @@ During our explanatory data analysis, we searched for the best identifier for al
 
 We also identified 'Unknown' items in the data and removed them because they made up a small proportion of the data.
 
-articles!
+![articles](https://user-images.githubusercontent.com/121171793/211380723-29a2ed1d-99b8-4740-8fe2-d53ad7666712.png)
+
 
 4) Recommender System
 Our recommendation system generates a list of articles that a customer may be interested in based on their current purchases and similarities with other users.
@@ -66,7 +69,8 @@ To measure the similarity between products, we used cosine similarity, which is 
 Final step
 We are now able to return the top 10 recommended items for a given input product, identified by its ID. It is possible that the input product could be included in the list of recommended items, which is not necessarily a problem as a user may choose to repurchase the same product. However, we included a function to handle this scenario by removing the input product from the list and adding the 11th item in its place.
 
-images!
+<img width="685" alt="content_based" src="https://user-images.githubusercontent.com/121171793/211380818-3fee9da9-3113-4319-a0e0-9880d0a73971.png">
+
 
 b) Collaborative filtering: CRS matrix
 The second type of recommendation system we implemented was a user-based filtering system, which is based on the idea of using customer opinions about various products to make recommendations. This system suggests articles to a customer based on their own past purchases, as well as the purchases and opinions of similar customers. Essentially, this system uses information collected from different customers to recommend products to the current customer.
@@ -80,7 +84,7 @@ To address this issue, we decided to only consider a portion of the dataset. We 
 KNN
 We imported the KNN algorithm from the 'sklearn' library. This algorithm clusters similar customers based on common transactions and makes predictions using the average rating of the top-k nearest neighbors. To evaluate similarity, we used cosine similarity, which measures the distance between instances to determine their "closeness".
 
-images2!
+<img width="1005" alt="crs_matrix" src="https://user-images.githubusercontent.com/121171793/211380914-8ed92ead-c7bd-4d0c-a51d-edebfe2f1012.png">
 
 c) Collaborative filtering: neural network
 The last method we used for the recommender system is the artificial neural network. In this case, we generate recommendations based on the similarity between users’ transactions, rather than the similarity of customers and articles (done through the utility matrix).
@@ -91,6 +95,9 @@ This method works by decomposing the user-item interaction matrix into the produ
 
 Loss function
 We used a loss function to evaluate the performance of our model and attempted to minimize the error. To optimize the performance of our function, we used the mean squared error (MSE) and two regularization coefficients, L2 and the gravity term.
+
+![loss_function](https://user-images.githubusercontent.com/121171793/211380981-978b7981-9509-43d3-97c2-674e7422e0e9.png)
+
 
 To evaluate the performance of our recommendations, we split our dataset into a train and test set and plotted the loss function. While the loss function was not perfect, the small value of the number of transactions on the y-axis made it difficult to predict. We experimented with various hyperparameters to try to improve the accuracy.
 
