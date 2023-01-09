@@ -35,7 +35,7 @@ We divided the customers into age categories, counted the number of people in ea
 
 ![club_membership](images/club_member.png)
 
-![fashion_news](images/age_group.png)
+![fashion_news](images/fashion_news.png)
 
 
 Transactions
