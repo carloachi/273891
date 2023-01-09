@@ -1,8 +1,8 @@
-RECOMMENDER SYSTEM
+# RECOMMENDER SYSTEM
 1. Team members
 - Carlo AChille Fiammenghi (273691)
 - Eyad Walid Elewa Ahmed (273821)
-- Marta Shkreli  ()
+- Marta Shkreli  (268341)
 
 2) Introduction
 Our project consists of boosting the revenues of a prestigious fashion firm through the use of data science. As members of the company's data science team, our primary focus is on improving the recommender system for the firm's online platform. To achieve this goal, we will be testing and evaluating various recommendation systems to determine the most effective one.
