@@ -33,7 +33,7 @@ We have data for over 40,000 customers, including their IDs, subscription status
 
 We divided the customers into age categories, counted the number of people in each category, and calculated the proportion of people who are subscribed to the club membership or fashion news.
 
-![club_membership](images/age group.png)
+![club_membership](images/club_member.png)
 
 ![fashion_news](images/age_group.png)
 
@@ -69,7 +69,7 @@ To measure the similarity between products, we used cosine similarity, which is 
 Final step
 We are now able to return the top 10 recommended items for a given input product, identified by its ID. It is possible that the input product could be included in the list of recommended items, which is not necessarily a problem as a user may choose to repurchase the same product. However, we included a function to handle this scenario by removing the input product from the list and adding the 11th item in its place.
 
-<img width="685" alt="content_based" src="https://user-images.githubusercontent.com/121171793/211380818-3fee9da9-3113-4319-a0e0-9880d0a73971.png">
+![finalstep](images/finalstep.png)
 
 
 b) Collaborative filtering: CRS matrix
@@ -84,7 +84,7 @@ To address this issue, we decided to only consider a portion of the dataset. We 
 KNN
 We imported the KNN algorithm from the 'sklearn' library. This algorithm clusters similar customers based on common transactions and makes predictions using the average rating of the top-k nearest neighbors. To evaluate similarity, we used cosine similarity, which measures the distance between instances to determine their "closeness".
 
-<img width="1005" alt="crs_matrix" src="https://user-images.githubusercontent.com/121171793/211380914-8ed92ead-c7bd-4d0c-a51d-edebfe2f1012.png">
+![KNN](images/KNN.png)
 
 c) Collaborative filtering: neural network
 The last method we used for the recommender system is the artificial neural network. In this case, we generate recommendations based on the similarity between users’ transactions, rather than the similarity of customers and articles (done through the utility matrix).
