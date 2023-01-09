@@ -1,83 +1,84 @@
 RECOMMENDER SYSTEM
-1) Team members
-Alessia Bresolin (275601)
-Raffaele Girardi (265131)
-Alessandro Ivashkevich (276871)
+1. Team members
+- Carlo AChille Fiammenghi (273691)
+- Eyad Walid Elewa Ahmed (273821)
+- Marta Shkreli  ()
+
 2) Introduction
-What does our project consists in? We have identified ourselves into members of the data science team of a prestigious fashion firm. Our primary aim is to boost the revenues of the company using any possible legal mean. Our online platform does not suffer any particular issue. However, we want to improve our recommender system. In this project, we will test different systems and select the most efficient one.
+Our project consists of boosting the revenues of a prestigious fashion firm through the use of data science. As members of the company's data science team, our primary focus is on improving the recommender system for the firm's online platform. To achieve this goal, we will be testing and evaluating various recommendation systems to determine the most effective one.
 
 3) Methods
-We have been proposed 3 datasets containing information for: customers, transactions and articles. We have analyzed all of them through a deep explanatory data analysis.
+We were provided with three datasets that contain information about customers, transactions, and articles. We performed a detailed explanatory data analysis on all of the datasets.
 
-a) Data Understanding
-'recsys_customers.csv': customer id associated to age and optional participation to fashion news and club member.
-'recsys_articles.csv': article id associated to the name of the product, colour of the product (from very detailed to very general), department, group of membership, section and type of garment.
-'recsys_transactions.csv': purchase done by a customer on a certain date
+a) Data understanding 
+The 'recsys_customers.csv' dataset includes customer IDs and ages, as well as optional information about participation in fashion news and membership in a club. The 'recsys_articles.csv' dataset contains article IDs, product names, color information ranging from very detailed to very general, departments, membership groups, sections, and types of garments. The 'recsys_transactions.csv' dataset includes information about purchases made by customers on specific dates.
+
 b) Data Preparation
-The output of this first step is a clean and more comprehensible dataset. This stage helps us to have a better insight of our data, especially about the relationship between customers and transactions. We have identified all the missing values and highlighted some important features of each dataset.
+we cleaned and organized the datasets to make them more understandable. This process helped us to gain a better understanding of the relationships between customers and transactions. We also identified and addressed any missing values and highlighted important features within each dataset.
 
 Deal with Null values in 'recsys_customer';
 Create additional dataframes;
 Deal with Null Values in 'recsys_article' by removing them;
 c) EDA
-Explanatory Data Analysis is a fundamental process in Machine Learning for data preparation. It is key to understand the intrinsic features of our datasets by applying different Python packages:
+Explanatory Data Analysis is a crucial step in the machine learning process for preparing data. It involves using various Python packages to understand the inherent characteristics of our datasets:
 
 Pandas;
 Numpy;
 Sklearn;
 Matplotlib.pyplot;
 Seaborn.
-Customers
-We have data for more than 40 thousands customers. For each of them, we have records of their identifier, if they are subscribed to fashion news, if they have a club membership and their age. Through EDA we have noticed that there was a small percentage of Null values (0.32%) in the age column. We decided to replace them by the value of the mode of the age of all the customers.
 
-We have grouped customers into age categories, calculated how many people belong to each of them and calculated the proportion of people who is subscribed to either the club membership or fashion news.
+Customers
+We have data for over 40,000 customers, including their IDs, subscription status for fashion news, club membership status, and ages. Our explanatory data analysis revealed a small percentage (0.32%) of null values in the age column. We decided to replace these null values with the mode of the ages of all the customers.
+
+We divided the customers into age categories, counted the number of people in each category, and calculated the proportion of people who are subscribed to the club membership or fashion news.
 
 Club Membership!
 
 Fashion News!
 
 Transactions
-For transactions, we have a file that stores all the purchases made by each customer and the date in which they made it. We calculated the number of transactions per customer and the maximum value of purchaess made by a single customer is 104 transactions. To get a better insight of the dataset, we have grouped all the transactions in classes and we noticed that only a small proportion of customers has done more than 30 transactions. We finally calculated also the number of customers that has bought each product.
+The transactions dataset includes information about all purchases made by each customer and the dates on which they were made. We calculated the number of transactions per customer and found that the maximum number of transactions made by a single customer was 104. To gain a better understanding of the dataset, we grouped the transactions into classes and observed that only a small proportion of customers made more than 30 transactions. We also calculated the number of customers who purchased each product.
 
 Transaction Groups!
 
 Articles
-6536 articles are stored in our dataset, with all their characteristics. Each product belongs to many categories: they have a garment group, a section, a deparment, an index group and a type.
+Our dataset includes 6536 articles, each with various characteristics. Each product belongs to multiple categories, including a garment group, section, department, index group, and type.
 
-We use the Explanatory Data Analysis to look for the best identifier for all the products. We have decided to discard the more precise classes to avoid overfitting and also too general ones because they may lead to an inaccurate recommender system. We finally decided to take into consideration only the articles' type and section. Another attribute of the articles is the colour. Again, we have taken into consideration only the 'perceived_colour_master' which was, for us, the best middle way between dealing with overfitting and having a precise model.
+During our explanatory data analysis, we searched for the best identifier for all the products. To avoid overfitting, we chose to discard more precise classes and also to exclude too general ones, as they might result in an inaccurate recommendation system. We ultimately decided to consider only the articles' type and section as identifiers. Another attribute of the articles is their color, and we selected the 'perceived_colour_master' attribute as the best balance between precision and avoiding overfitting.
 
-Furthermore, we have noticed the presence of 'Unknown' items, which we have deleted because they represented just a small proportion of the data.
+We also identified 'Unknown' items in the data and removed them because they made up a small proportion of the data.
 
 articles!
 
 4) Recommender System
-Our recommender system generates a list of articles that a customer might be interested in, basing on its actual purchases and on the similarities with other users.
+Our recommendation system generates a list of articles that a customer may be interested in based on their current purchases and similarities with other users.
 
 a) Content filtering
-The first type of recommendation system we have applied is: content filtering recommender system. The final suggestions are shaped on the basis of features of the products, in our case their color, group and type. Obviously, we could do the same, using all the other properties of the articles.
+The first type of recommendation system we implemented was a content filtering system, which made suggestions based on features of the products such as color, group, and type. We could also have used all of the other product attributes for this purpose.
 
 One Hot Encoding
-We create a one hot encoding for the colour value of the articles. We do the same for the section and the type of the product. We obtain 3 tables with ID of articles as rows and all the features as columns. Inside the tables, the value of a cell will be 1 if a specific article will have a specific feature. We finally concatenate all the tables.
+We created a one-hot encoding for the color value of the articles and did the same for the section and type of the product. This resulted in three tables with the ID of the articles as rows and all the features as columns. Each cell in the table has a value of 1 if the corresponding article has the specific feature. We then concatenated all of the tables.
 
 Cosine Similarity
-To evaluate the similarity between products, we use cosine similarity, which avails of the cosine angle between two vectors. Clearly, the smaller the angle, the higher the degree of similarity.
+To measure the similarity between products, we used cosine similarity, which is based on the cosine angle between two vectors. The smaller the angle, the greater the similarity between the products.
 
 Final step
-We are now ready to return the 10 recommended items for the input product, identified by its ID. We have noticed that there is the possibility to receive as recommended item, the same output that the funnction gets as input. This is not a problem because a user might decide to buy again the same product. Anyway, we inserted a function that checks for this issue and in the case in happens, the recommender system will remove the input item and add the 11th item in the rank in the output.
+We are now able to return the top 10 recommended items for a given input product, identified by its ID. It is possible that the input product could be included in the list of recommended items, which is not necessarily a problem as a user may choose to repurchase the same product. However, we included a function to handle this scenario by removing the input product from the list and adding the 11th item in its place.
 
 images!
 
 b) Collaborative filtering: CRS matrix
-The second type of recommendation system we have applied is: user-based filtering recommender system. This kind of system is based on the idea of considering customers' opinions on the different products and suggest an article based on other purchases of the client and purchases and opinions of customers that are similar to him. Basically, in this case, we use information collected by different customers to recommend products to the actual customer.
+The second type of recommendation system we implemented was a user-based filtering system, which is based on the idea of using customer opinions about various products to make recommendations. This system suggests articles to a customer based on their own past purchases, as well as the purchases and opinions of similar customers. Essentially, this system uses information collected from different customers to recommend products to the current customer.
 
 CSR Matrix
-We began by creating a matrix with 'customer_id' and 'article_id' in order to map all the transactions that have occured in the dataset. However, the matrix will have plenty of unobserved elements because each user purchases only a small amount of products with respect to the entirety of them. We calculated the sparsity of the matrix and we noticed its value was way too small to consider it to make reliable predictions.
+We started by creating a matrix with 'customer_id' and 'article_id' in order to map all of the transactions in the dataset. However, this matrix had many unobserved elements because each user only purchased a small number of products relative to the total number of products. We calculated the sparsity of the matrix and found that its value was too low to make reliable predictions.
 
 Increase sparsity
-To limit this issue, we decided to consider only a part of the dataset. We discarded all the columns of the customers who bought less than a certain amount of products. Similarly, we discarded some of the rows that corresponded to the products that have been bought less.
+To address this issue, we decided to only consider a portion of the dataset. We removed columns corresponding to customers who made fewer than a certain number of purchases and also eliminated some rows corresponding to products that had been purchased less frequently.
 
 KNN
-We imported KNN from 'sklearn' library. The algorithm finds clusters of similar customers based on common transactions, and makes predictions using the average rating of top-k nearest neighbors. To evaluate the similarity, we use cosine similarity: the KNN algorithm will measure the distance to determine the “closeness” of instances.
+We imported the KNN algorithm from the 'sklearn' library. This algorithm clusters similar customers based on common transactions and makes predictions using the average rating of the top-k nearest neighbors. To evaluate similarity, we used cosine similarity, which measures the distance between instances to determine their "closeness".
 
 images2!
 
@@ -85,24 +86,22 @@ c) Collaborative filtering: neural network
 The last method we used for the recommender system is the artificial neural network. In this case, we generate recommendations based on the similarity between users’ transactions, rather than the similarity of customers and articles (done through the utility matrix).
 
 Matrix factorization
-Matrix factorization is a way to understand the features or information underlying the interactions between customers and articles. To find similarities and make predictions we check for the association between customers and articles matrices.
-It works by decomposing the user-item interaction matrix into the product of two lower dimensionality rectangular matrices. We do this to counter the issue of sparsity because most customers buy only a minor set of customers.
+Matrix factorization is a method for uncovering the features or information underlying the interactions between customers and articles. To find similarities and make predictions, we examine the relationship between the customer and article matrices.
+This method works by decomposing the user-item interaction matrix into the product of two lower-dimensional rectangular matrices, which helps to address the issue of sparsity caused by most customers only purchasing a small number of items.
 
 Loss function
-We use the loss function to look for the performance of our model and try to minimize the error. To optimize the perfromance of our function, we use the MSE and two regularization coefficients, which are L2 and the gravity term.
-loss_function!
+We used a loss function to evaluate the performance of our model and attempted to minimize the error. To optimize the performance of our function, we used the mean squared error (MSE) and two regularization coefficients, L2 and the gravity term.
 
-Train and test set To evaluate the performance of our recommendations, we split our dataset into test and train set and we plot the loss function. Our loss function in not perfect, but in our case the value of the amount of transactions represented on the y axis is pretty small and difficult to predict. We have played with our hyperparameters to try to settle this issue.
+To evaluate the performance of our recommendations, we split our dataset into a train and test set and plotted the loss function. While the loss function was not perfect, the small value of the number of transactions on the y-axis made it difficult to predict. We experimented with various hyperparameters to try to improve the accuracy.
 
-Final scores We are finally ready use the neural network for our recommendation system. We either use the dot product or cosine similarity to rate it adn we retrieve the top 5 recommendation results.
+After training the model, we used either the dot product or cosine similarity to rate it and retrieved the top 5 recommended results.
 
-Final output and personal considerations
-Our recommender engine has been implemented to boost the revenues of our company by predicting user preferences and recommending the right products to each user. We have applied different kinds of recommendations using content-based and collaborative filtering systems.
+Our recommendation engine was designed to increase company revenue by predicting user preferences and recommending the right products to each user. We employed various types of recommendations using both content-based and collaborative filtering systems.
 
-For what concerns our first model, the content-based one, the model is pretty accurate because we have many details regarding all the products. For instance, we can choose to use the department instead of the group to have an higher precision or the 'perceived_colour_value' instead of the 'perceived_colour_master'. We can use them as sort of hyperparameters to fit better our recommendations.
+Regarding the first model, a content-based one, the model was quite accurate due to the extensive details available about all the products. For example, we could use the department instead of the group for increased precision, or the 'perceived_colour_value' instead of the 'perceived_colour_master' as hyperparameters to improve the recommendations.
 
-Instead, we have built the second model using collaborative filtering. We have used the CRS matrix, which is used in python to represent sparse matrices. Unfortunately, we believe this model was not suitable for our dataset. We have too many zero values and in order to get a decent level of sparsity we would need to reduce too much both the number of articles and of customers. With the initial dataset we have a sparsity of 0.11%, which we were able to enhance until reaching approximately a vaue of 0,6%. Probably, we could even rich a higher value but this action would lead to a further loss of information, which is not good for our user recomendation system.
+For the second model, a collaborative filtering one, we used a CRS matrix to represent sparse matrices. However, we believe this model was not suitable for our dataset due to the high number of zero values. To achieve a decent level of sparsity, we would have had to significantly reduce the number of articles and customers, which would have resulted in a loss of information and an inadequate recommendation system. The initial dataset had a sparsity of 0.11%, which we were able to increase to about 0.6%.
 
-The last method we tried to implement was the artificial neural network. This method was really hard to implement for us because we had to play a lot with all the parameters to check which values were the ones that better fitted our dataset.
+The last method we tried to implement was an artificial neural network, which was challenging to set up as we had to experiment with various parameters to find the values that best fit our dataset.
 
-A major complication we had to face in our models was the fact that we did not have any rating for a product, but we had to make use of the amount of transactions to make reccomendations between users. Their values are clearly small because most of the customers have purchased a low amount of products. Anyway we were able to create three different recommender systems, which our company can exploit to yield higher revenues.
+One major issue we faced with all our models was the lack of ratings for products, requiring us to use the number of transactions to make recommendations between users. These values were relatively small due to the majority of customers only making a small number of purchases. Despite these challenges, we were able to develop three different recommendation systems that our company can use to increase revenue.
