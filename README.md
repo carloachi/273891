@@ -33,10 +33,10 @@ We have data for over 40,000 customers, including their IDs, subscription status
 
 We divided the customers into age categories, counted the number of people in each category, and calculated the proportion of people who are subscribed to the club membership or fashion news.
 
-![club_membership](images/n_transaction_n_customers.png)
+![club_membership](images/age group.png)
 
 ![fashion_news](images/age_group.png)
-Club Membership!
+
 
 Transactions
 The transactions dataset includes information about all purchases made by each customer and the dates on which they were made. We calculated the number of transactions per customer and found that the maximum number of transactions made by a single customer was 104. To gain a better understanding of the dataset, we grouped the transactions into classes and observed that only a small proportion of customers made more than 30 transactions. We also calculated the number of customers who purchased each product.
