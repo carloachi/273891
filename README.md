@@ -90,7 +90,7 @@ c) Collaborative filtering: neural network
 The last method we used for the recommender system is the artificial neural network. In this case, we generate recommendations based on the similarity between users’ transactions, rather than the similarity of customers and articles (done through the utility matrix).
 
 Matrix factorization
-Matrix factorization is a method for uncovering the features or information underlying the interactions between customers and articles. To find similarities and make predictions, we examine the relationship between the customer and article matrices.
+is a method for uncovering the features or information underlying the interactions between customers and articles. To find similarities and make predictions, we examine the relationship between the customer and article matrices.
 This method works by decomposing the user-item interaction matrix into the product of two lower-dimensional rectangular matrices, which helps to address the issue of sparsity caused by most customers only purchasing a small number of items.
 
 Loss function
